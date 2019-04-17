@@ -1,8 +1,9 @@
 <template>
   <a-carousel autoplay>
-    <div><img src="./background.jpg" alt="background"></div>
-    <div><img src="./98e96e37c67c5ef969843ca4e8ad51a0.jpg" alt="background"></div>
-    <div><img src="./G.jpg" alt="background"></div>
+    <div><h3>1</h3></div>
+    <div><h3>2</h3></div>
+    <div><h3>3</h3></div>
+    <div><h3>4</h3></div>
   </a-carousel>
 </template>
 <script>
@@ -11,7 +12,15 @@
 </script>
 <style scoped>
   .ant-carousel >>> .slick-slide {
+    text-align: center;
     height: 830px;
+    line-height: 830px;
+    background: #364d79;
     overflow: hidden;
+  }
+
+  .ant-carousel >>> .slick-slide  h3 {
+    font-size: 200px;
+    color: #fff;
   }
 </style>
