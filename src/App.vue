@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <a-layout id="components-layout">
-      <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
+      <a-layout-header :style="{ position: 'fixed', zIndex: 100, width: '100%' }">
         <div class="logo" />
         <a-menu
           theme="dark"
@@ -16,7 +16,7 @@
             <a-icon type="message" />班级通知
           </a-menu-item>
           <a-menu-item>
-            <router-link to="/activity">
+            <router-link to="/activity/activityShow">
               <a-icon type="flag" />班级活动
             </router-link>
           </a-menu-item>
@@ -35,7 +35,7 @@
           <a-menu-item>
             <a-icon type="smile"/>漂流瓶
           </a-menu-item>
-          <a-menu-item>
+          <a-menu-item v-if="!hasLogin">
             <router-link to="/login">
               <a-icon type="alert" />登录
             </router-link>
@@ -50,9 +50,8 @@
       </a-layout-header>
       <a-layout-content :style="{ padding: '0 50px', marginTop: '64px' }">
         <a-breadcrumb :style="{ margin: '16px 0' }">
-          <a-breadcrumb-item>Home</a-breadcrumb-item>
-          <a-breadcrumb-item>List</a-breadcrumb-item>
-          <a-breadcrumb-item>App</a-breadcrumb-item>
+          <a-breadcrumb-item>首页</a-breadcrumb-item>
+           <a-breadcrumb-item v-if="position">{{this.position}}</a-breadcrumb-item>
         </a-breadcrumb>
         <div :style="{ background: '#fff', padding: '24px', minHeight: '380px' }">
           <router-view/>
@@ -67,7 +66,28 @@
 
 <script>
   export default {
-    name: 'App'
+    name: 'App',
+    data () {
+      return {
+        hasLogin: false
+      };
+    },
+    computed: {
+      position () {
+        if (this.$route.path === '/index') {
+          return '';
+        } else if (this.$route.path === '/activity') {
+          return '班级活动';
+        } else if (this.$route.path === '/login') {
+          return '登录';
+        }
+      }
+    },
+    methods: {
+      loginState () {
+        this.hasLogin = true;
+      }
+    }
   }
 </script>
 

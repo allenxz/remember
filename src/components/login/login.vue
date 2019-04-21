@@ -13,7 +13,7 @@
           <fieldset class="clearfix">
             <p><span class="fontawesome-user"></span><input type="text" placeholder="UserName" required></p>
             <p><span class="fontawesome-lock"></span><input type="password"  placeholder="Password" required></p>
-            <p><input type="submit" value="Login"></p>
+            <p><input type="submit" @click="toLogin" value="Login"></p>
           </fieldset>
         </form>
         <p><a href="#" class="blue">Sign up now</a></p>
@@ -23,7 +23,18 @@
 </template>
 
 <script>
-  export default {};
+  export default {
+    data () {
+      return {
+      };
+    },
+    methods: {
+      toLogin () {
+        let hasLogin = true;
+        this.$emit('loginState', hasLogin);
+      }
+    }
+  };
 </script>
 
 <style scoped>
