@@ -12,8 +12,13 @@
             </a-col>
           </a-row>
         </a-tab-pane>
-        <a-tab-pane tab="我的班级" key="2" forceRender>Content of Tab Pane 2</a-tab-pane>
-        <a-tab-pane tab="关注班级" key="3">Content of Tab Pane 3</a-tab-pane>
+        <a-tab-pane tab="关注班级" key="2">
+          <a-row :gutter="16">
+            <a-col :sm="24" :md="12" :lg="8" :xl="6" v-for="info in classList" :key="info.index">
+              <activityCard :info="info"></activityCard>
+            </a-col>
+          </a-row>
+        </a-tab-pane>
       </a-tabs>
     </div>
   </div>

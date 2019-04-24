@@ -16,6 +16,8 @@ const app = express()//请求server
 var appData = require('../data.json')//加载本地数据文件
 var classList = appData.classList//获取对应的本地数据
 var activityList = appData.activityList
+var commentList = appData.commentList
+var activity = appData.activity
 var apiRoutes = express.Router()
 app.use('/api', apiRoutes)//通过路由请求数据
 
@@ -58,13 +60,25 @@ const devWebpackConfig = merge(baseWebpackConfig, {
           errno: 0,
           data: classList
         })//接口返回json数据，上面配置的数据seller就赋值给data请求后调用
-      }),
+      });
       app.get('/api/activityList', (req, res) => {
         res.json({
           errno: 0,
           data: activityList
         })//接口返回json数据，上面配置的数据seller就赋值给data请求后调用
-      })
+      });
+      app.get('/api/commentList', (req, res) => {
+        res.json({
+          errno: 0,
+          data: commentList
+        })//接口返回json数据，上面配置的数据seller就赋值给data请求后调用
+      });
+      app.get('/api/activity', (req, res) => {
+        res.json({
+          errno: 0,
+          data: activity
+        })//接口返回json数据，上面配置的数据seller就赋值给data请求后调用
+      });
     }
   },
   plugins: [

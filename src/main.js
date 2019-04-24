@@ -22,7 +22,9 @@ import Button from 'ant-design-vue/lib/button';
 import 'ant-design-vue/dist/antd.css';
 import '../static/css/reset.css';
 import VueResource from 'vue-resource';
+import Vuex from 'vuex';
 
+Vue.use(Vuex);
 Vue.use(Menu);
 Vue.use(Icon);
 Vue.use(Carousel);

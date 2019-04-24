@@ -5,6 +5,7 @@ import activity from '@/components/activity/activity';
 import activityShow from '@/components/activityShow/activityShow';
 import activitySummary from '@/components/activitySummary/activitySummary';
 import login from '@/components/login/login';
+import activityDetail from '../components/activityDetail/activityDetail'
 
 Vue.use(Router);
 
@@ -29,6 +30,10 @@ export default new Router({
         {
           path: 'activitySummary/:className',
           component: activitySummary
+        },
+        {
+          path: 'activityDetail/:className/:activityId',
+          component: activityDetail
         }
       ]
     },

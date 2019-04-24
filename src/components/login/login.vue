@@ -45,7 +45,7 @@
   }
 
   .login-wrapper{
-    height: 700px;
+    height: 650px;
   }
   /* ---------- GENERAL ---------- */
   .clearfix {
@@ -75,7 +75,7 @@
 
   #login form span {
     background-color: #363b41;
-    border-radius: 3px 0px 0px 3px;
+    border-radius: 3px 0 0 3px;
     color: #606468;
     display: block;
     float: left;
