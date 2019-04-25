@@ -74,6 +74,8 @@
 <style scoped>
   .activitySummary {
     min-height: 700px;
+    padding: 24px;
+    background: #fff;
   }
 
   .activitySummary h1 {

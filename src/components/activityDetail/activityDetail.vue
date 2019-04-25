@@ -142,6 +142,8 @@
 <style scoped>
   .activityDetail {
     min-height: 700px;
+    padding: 24px;
+    background: #fff;
   }
 
   .activityDetail h1 {

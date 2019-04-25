@@ -46,6 +46,8 @@
 
   .login-wrapper{
     height: 650px;
+    padding: 24px;
+    background: #fff;
   }
   /* ---------- GENERAL ---------- */
   .clearfix {

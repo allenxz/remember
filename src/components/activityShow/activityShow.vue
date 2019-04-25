@@ -57,6 +57,8 @@
 <style scoped>
   .activityShow{
     min-height: 700px;
+    padding: 24px;
+    background: #fff;
   }
 
   .container{

@@ -19,6 +19,7 @@ import Comment from 'ant-design-vue/lib/comment';
 import Form from 'ant-design-vue/lib/form';
 import Input from 'ant-design-vue/lib/input';
 import Button from 'ant-design-vue/lib/button';
+import Divider from 'ant-design-vue/lib/divider';
 import 'ant-design-vue/dist/antd.css';
 import '../static/css/reset.css';
 import VueResource from 'vue-resource';
@@ -42,6 +43,7 @@ Vue.use(Comment);
 Vue.use(Form);
 Vue.use(Input);
 Vue.use(Button);
+Vue.use(Divider);
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */

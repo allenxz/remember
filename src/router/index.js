@@ -6,6 +6,7 @@ import activityShow from '@/components/activityShow/activityShow';
 import activitySummary from '@/components/activitySummary/activitySummary';
 import login from '@/components/login/login';
 import activityDetail from '../components/activityDetail/activityDetail'
+import profile from '../components/profile/profile'
 
 Vue.use(Router);
 
@@ -40,6 +41,10 @@ export default new Router({
     {
       path: '/login',
       component: login
+    },
+    {
+      path: '/profile',
+      component: profile
     }
   ]
 })

@@ -41,7 +41,9 @@
             </router-link>
           </a-menu-item>
           <a-menu-item>
-            <a-icon type="home"/>我的
+            <router-link to="/profile">
+              <a-icon type="home"/>我的
+            </router-link>
           </a-menu-item>
           <a-menu-item>
             <a-icon type="stop"/>注销
@@ -53,7 +55,7 @@
           <a-breadcrumb-item>首页</a-breadcrumb-item>
            <a-breadcrumb-item v-if="position">{{this.position}}</a-breadcrumb-item>
         </a-breadcrumb>
-        <div :style="{ background: '#fff', padding: '24px', minHeight: '380px' }">
+        <div :style="{  minHeight: '380px' }">
           <router-view/>
         </div>
       </a-layout-content>
