@@ -20,9 +20,38 @@
               个人资料
             </span>
             <div class="person-info">
-              <a-row>
-                <a-col :span="2">性别：</a-col>
-                <a-col :span="18">男</a-col>
+              <a-row class="info-block">
+                <a-col :span="10" class="info-bold"><a-icon type="message" style="margin-right: 8px"/>个人简介：</a-col><a-col :span="10">歌手、演员</a-col>
+              </a-row>
+              <a-row class="info-block">
+                <a-col :span="10" class="info-bold"><a-icon type="mail" style="margin-right: 8px"/>电子邮箱：</a-col><a-col :span="10">wuyifan@vip.com</a-col>
+              </a-row>
+              <a-row class="info-block">
+                <a-col :span="10" class="info-bold"><a-icon type="phone" style="margin-right: 8px"/>手机：</a-col><a-col :span="10">13111111111</a-col>
+              </a-row>
+              <a-row class="info-block">
+                <a-col :span="10" class="info-bold"><a-icon type="team" style="margin-right: 8px"/>班级：</a-col><a-col :span="10">雷电1班</a-col>
+              </a-row>
+              <a-row class="info-block">
+                <a-col :span="10" class="info-bold"><a-icon type="gift" style="margin-right: 8px"/>生日：</a-col><a-col :span="10">1995-1-1</a-col>
+              </a-row>
+              <a-row class="info-block">
+                <a-col :span="10" class="info-bold"><a-icon type="home" style="margin-right: 8px"/>住址：</a-col><a-col :span="10">加拿大</a-col>
+              </a-row>
+              <a-row class="info-block">
+                <a-col :span="10" class="info-bold"><a-icon type="qq" style="margin-right: 8px"/>QQ：</a-col><a-col :span="10">XXXXXXX</a-col>
+              </a-row>
+              <a-row class="info-block">
+                <a-col :span="10" class="info-bold"><a-icon type="wechat" style="margin-right: 8px"/>微信：</a-col><a-col :span="10">XXXXXX</a-col>
+              </a-row>
+              <a-row class="info-block">
+                <a-col :span="10" class="info-bold"><a-icon type="github" style="margin-right: 8px"/>github：</a-col><a-col :span="10">wuyifan</a-col>
+              </a-row>
+              <a-row class="info-block">
+                <a-col :span="10" class="info-bold"><a-icon type="chrome" style="margin-right: 8px"/>博客：</a-col><a-col :span="10">www.wuyifam.com</a-col>
+              </a-row>
+              <a-row class="info-block">
+                <a-col :span="10" class="info-bold"><a-icon type="environment" style="margin-right: 8px"/>工作地址：</a-col><a-col :span="10">B站</a-col>
               </a-row>
             </div>
           </a-tab-pane>
@@ -36,8 +65,9 @@
         </a-tabs>
       </div>
       <div class="profile-right">
-        <div class="graph">
+        <div class="skill-chart">
           <h1>能力雷达图</h1>
+          <radarChart :chartData="chartData"></radarChart>
         </div>
       </div>
     </div>
@@ -45,7 +75,18 @@
 </template>
 
 <script>
-export default {};
+  import RadarChart from '../radarChart/radarChart';
+
+  export default {
+    data () {
+      return {
+        chartData: {value: [10, 3, 0, 1, 10, 3]}
+      }
+    },
+    components: {
+      RadarChart
+    }
+  };
 </script>
 
 <style>
@@ -61,7 +102,7 @@ export default {};
     width: 100%;
     height: 240px;
     /*TODO*/
-    background :url("./c4.jpg") no-repeat;
+    background :url("c4.jpg") no-repeat;
     background-size: cover;
   }
 
@@ -111,8 +152,26 @@ export default {};
   }
 
   .profile-right{
-    padding: 10px;
     flex: 0 0 25%;
+  }
+
+  .skill-chart{
+    padding: 10px;
     background: #fff;
+  }
+
+  .person-info{
+    width: 50%;
+    margin: 20px auto;
+  }
+
+  .info-block{
+    padding: 30px 0 30px 0;
+    font-size: 15px;
+  }
+
+  .info-bold{
+    font-size: 17px;
+    font-weight: 600;
   }
 </style>

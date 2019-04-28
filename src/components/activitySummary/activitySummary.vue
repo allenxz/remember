@@ -11,14 +11,14 @@
         <template slot="actions">
           <span>
             <a-icon type="star-o" style="margin-right: 8px"/>
-            {{item.star}}
+            {{item.start}}
           </span><span>
             <a-icon type="like-o" style="margin-right: 8px"/>
             {{item.like}}
           </span>
         </template>
-        <img slot="extra" width="272" alt="logo"
-                :src="item.images[0]" />
+<!--        <img slot="extra" width="272" alt="logo"-->
+<!--                :src="item.images[0]" />-->
         <a-list-item-meta :description="item.description">
           <a slot="title" @click="skip(item.id)">{{item.title}}</a>
           <a-avatar slot="avatar" :src="item.avatar"/>
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-  const ERR_OK = 0;
+  // const ERR_OK = 0;
   export default {
     data () {
       return {
@@ -48,11 +48,18 @@
       }
     },
     created () {
-      this.$http.get('/api/activityList').then((response) => {
-        response = response.body;
-        if (response.errno === ERR_OK) {
-          this.listData = response.data;
-        }
+      let url = 'http://172.28.7.24/Activity/class/1/';
+      // let sendData = {
+      //   'class_id': '1',
+      //   'activity_id': '',
+      //   'category': ''
+      // };
+      this.$http.get(url).then((response) => {
+        this.listData = response.data;
+      }, (err) => {
+        console.log(err);
+      }).catch((response) => {
+        console.log(response);
       });
     },
     watch: {

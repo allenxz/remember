@@ -42,7 +42,7 @@
           </a-menu-item>
           <a-menu-item>
             <router-link to="/profile">
-              <a-icon type="home"/>我的
+              <a-icon type="home"/>我的主页
             </router-link>
           </a-menu-item>
           <a-menu-item>
