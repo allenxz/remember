@@ -18,6 +18,7 @@ var classList = appData.classList//获取对应的本地数据
 var activityList = appData.activityList
 var commentList = appData.commentList
 var activity = appData.activity
+var achievement=appData.achievement
 var apiRoutes = express.Router()
 app.use('/api', apiRoutes)//通过路由请求数据
 
@@ -77,6 +78,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         res.json({
           errno: 0,
           data: activity
+        })//接口返回json数据，上面配置的数据seller就赋值给data请求后调用
+      });
+      app.get('/api/achievement', (req, res) => {
+        res.json({
+          errno: 0,
+          data: achievement
         })//接口返回json数据，上面配置的数据seller就赋值给data请求后调用
       });
     }
