@@ -13,7 +13,7 @@
             <router-link to="/index">Remember</router-link>
           </a-menu-item>
           <a-menu-item>
-            <a-icon type="message" />班级通知
+            <a-icon type="message" />班级事务
           </a-menu-item>
           <a-menu-item>
             <router-link to="/activity/activityShow">
@@ -21,19 +21,10 @@
             </router-link>
           </a-menu-item>
           <a-menu-item>
-            <a-icon type="file" />班级文件
-          </a-menu-item>
-          <a-menu-item>
-            <a-icon type="gift" />好友生日
-          </a-menu-item>
-          <a-menu-item>
             <a-icon type="picture" />大家の黑照
           </a-menu-item>
           <a-menu-item>
             <a-icon type="reconciliation"/>我们的小目标
-          </a-menu-item>
-          <a-menu-item>
-            <a-icon type="smile"/>漂流瓶
           </a-menu-item>
           <a-menu-item v-if="!hasLogin">
             <router-link to="/login">
